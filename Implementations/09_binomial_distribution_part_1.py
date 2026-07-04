@@ -1,8 +1,9 @@
 import numpy as np
+import matplotlib.pyplot as plt
 
 n = 5 # chances
 p = 0.5 # probability of having heads or tails
-
+x_values = np.array([0,1,2,3,4,5])
 # math combination logic function
 def combination_logic(x, y):
     x_fact = 1
@@ -40,3 +41,14 @@ total_sum = np.sum(prob_array)
 print(f"Saari probabilities ka total sum: {total_sum}")
 
 
+
+plt.figure(figsize=(8,5))
+plt.bar(x_values, prob_array, color='skyblue', edgecolor='black', width=0.6, label="Discrete Binomial")
+
+plt.title("Binomial Probability Distribution (5 Coin Flips)")
+plt.xlabel("Number of Heads (Random Variable X)")
+plt.ylabel("Probability")
+plt.xticks(x_values) 
+plt.grid(axis='y', linestyle='--', alpha=0.7)
+plt.legend()
+plt.show()
